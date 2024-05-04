@@ -1,7 +1,6 @@
 $(function () {
     $("#birthday").datepicker();
-    $("#myform").validate()
-    
+
     let languages = [
         "C",
         "Java",

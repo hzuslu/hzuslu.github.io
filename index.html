@@ -58,6 +58,27 @@
         .link-container a:hover {
             background-color: #0056b3;
         }
+        /* Dropdown menü stilleri */
+        .dropdown-container {
+            display: none;
+            padding-left: 10px;
+        }
+
+        .dropdown-container a {
+            display: block;
+            padding: 10px 0;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-container a:hover {
+            background-color: #0056b3; /* Daha koyu mavi bir tonu hover efekti için */
+        }
+
+        .active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -77,9 +98,24 @@
         <a href="/uslu-bilgen-activity7/uslu-bilgen.html">Activity 7</a>
         <a href="/uslu-bilgen-activity8/uslu-bilgenActivity8.html">Activity 8</a>
         <a href="/uslu-bilgen-activity9/uslu-bilgen-Activity9.html">Activity 9</a>
-        <a href="/uslu-bilgen-Activity10">Activity 10</a>
+        <a href="javascript:void(0)" class="dropdown-btn">Activity 10</a>
+        <div class="dropdown-container">
+            <a href="/uslu-bilgen-Activity10/Accordion/index.html">Accordion</a>
+            <a href="/uslu-bilgen-Activity10/Slider/index.html">Slider</a>
+            <a href="/uslu-bilgen-Activity10/Widget/index.html">Widget</a>
+        </div>
         <a href="/sprint2/index.html">Sprint 2</a>
         <a href="/sprint3/index.html">Sprint 3</a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var dropdownBtn = document.querySelector(".dropdown-btn");
+            var dropdownContainer = document.querySelector(".dropdown-container");
+
+            dropdownBtn.addEventListener("click", function() {
+                dropdownContainer.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>
